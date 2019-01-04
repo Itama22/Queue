@@ -1,0 +1,36 @@
+// Queue
+
+	public static boolean ArrayIstLeer() {
+
+		if (anfang == -1 && ende == -1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public static void Enqueue(Variable name) {
+
+		if ((ende + 1) % queueGroesse == anfang) {
+			System.out.println("Fehler - Array ist voll!");
+		} else if (ArrayIstLeer()) {
+			anfang = 0;
+			ende = 0;
+			queue[ende] = name;
+		} else {
+			ende = (ende + 1) % queueGroesse;
+			queue[ende] = vname;
+		}
+	}
+
+	public static void Dequeue() {
+
+		if (ArrayIstLeer()) {
+			System.out.println("Fehler - Array ist leer!");
+		} else if (anfang == ende) {
+			anfang = -1;
+			ende = -1;
+		} else {
+			anfang = (anfang + 1) % queueGroesse;
+		}
+	}
